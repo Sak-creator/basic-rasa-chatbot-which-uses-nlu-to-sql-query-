@@ -1,0 +1,41 @@
+
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: provide_table
+  examples: |
+    -  [customers](table)
+    -  [clients](table)
+    - show top 10 [patients](table)
+    - show top 10 [employees](table)
+    - for table 10 [orders](table)
+    - get top 10 [clients](table)
