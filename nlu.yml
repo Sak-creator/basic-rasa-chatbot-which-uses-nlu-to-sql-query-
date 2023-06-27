@@ -33,9 +33,21 @@ nlu:
 
 - intent: provide_table
   examples: |
-    -  [customers](table)
-    -  [clients](table)
-    - show top 10 [patients](table)
-    - show top 10 [employees](table)
-    - for table 10 [orders](table)
-    - get top 10 [clients](table)
+    -  [vendors](table)
+    -  [vendors](table)
+    - give list of [vendors](table)
+    - show me list of [vendors](table)
+    - list all [vendors](table)
+    - bring the list of [vendors](table)
+
+- intent: provide_table_where
+  examples: |
+    - show top 10 [vendors](table) whose [experience](column) is [greater](operator) than [18](value) years
+    - show top 10 [vendors](table) whose [age](column) is [less](operator)than [30](value)
+    - show top 10 [vendors](table) whose [age](column) is [lesser](operator) than [20](value) 
+    - show top 10 [vendors](table) whose [experience](column) is [less](operator) than [10](value) years
+    - show top 10 [vendors](table) whose [age](column) is [greater](operator) than [50](value)
+    - display top 10 [vendors](table) with [age](column) [less](operator) than [30](value)
+    - show me the top 10 [vendors](table) where [age](column) is [less](operator) than [30](value)
+    - list top 10 [vendors](table) whose [age](column) is [below](operator) [30](value)
+
