@@ -1,7 +1,6 @@
 version: "3.1"
 
 stories:
-
 - story: greet and goodbye
   steps:
   - intent: greet
@@ -9,27 +8,26 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-# - story: greet with display top customers
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: provide_table
-#   - action: generate_sql_query_action
-#   - action: utter_display_results
+- story: greet with display where query
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_table_where
+  - action: generate_where_query_action
+
+- story: story path 3
+  steps:
+  - intent: provide_table_where
+  - action: generate_where_query_action
 
 - story: story path 1
   steps:
   - intent: provide_table
   - action: generate_sql_query_action
+
 - story: story path 2
   steps:
   - intent: greet
   - action: utter_greet
   - intent: provide_table
   - action: generate_sql_query_action
-#- story: ask for name of table
-  #steps:
- # - intent: greet
-  #- action: utter_greet
-  # intent: provide_table
- # - action: utter_provide_table
