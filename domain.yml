@@ -5,31 +5,57 @@ intents:
   - goodbye
   - display_results
   - provide_table
+  - provide_table_where
+  - display_where
 
 entities:
   - table
+  - value
+  - column
+  - operator
 
 slots:
-   table:
+  table:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: table
+  value:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: value
+  column:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: column
+  operator:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: operator
 
 actions:
   - generate_sql_query_action
+  - generate_where_query_action
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you?"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_display_results:
-  - text: "Sure! here is your SQL query: {query}"
+    - text: "Sure! Here is your SQL query: {query}"
 
+  utter_display_where:
+    - text: "Sure! Here is your SQL query: {where}"
 
 session_config:
   session_expiration_time: 60
