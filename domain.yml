@@ -1,3 +1,4 @@
+
 version: "3.1"
 
 intents:
@@ -7,12 +8,15 @@ intents:
   - provide_table
   - provide_table_where
   - display_where
+  - display_word
+  - provide_table_name
 
 entities:
   - table
   - value
   - column
   - operator
+  - namee
 
 slots:
   table:
@@ -39,6 +43,12 @@ slots:
     mappings:
       - type: from_entity
         entity: operator
+  namee:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: namee
 
 actions:
   - generate_sql_query_action
@@ -52,11 +62,16 @@ responses:
     - text: "Bye"
 
   utter_display_results:
-    - text: "Sure! Here is your SQL query: {query}"
+    - text: "{query}"
 
   utter_display_where:
-    - text: "Sure! Here is your SQL query: {where}"
+    - text: "{where}"
+
+  utter_display_word:
+    - text: "{word}"
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+  
