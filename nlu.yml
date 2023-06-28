@@ -42,12 +42,29 @@ nlu:
 
 - intent: provide_table_where
   examples: |
-    - show top 10 [vendors](table) whose [experience](column) is [greater](operator) than [18](value) years
-    - show top 10 [vendors](table) whose [age](column) is [less](operator)than [30](value)
-    - show top 10 [vendors](table) whose [age](column) is [lesser](operator) than [20](value) 
-    - show top 10 [vendors](table) whose [experience](column) is [less](operator) than [10](value) years
-    - show top 10 [vendors](table) whose [age](column) is [greater](operator) than [50](value)
-    - display top 10 [vendors](table) with [age](column) [less](operator) than [30](value)
-    - show me the top 10 [vendors](table) where [age](column) is [less](operator) than [30](value)
-    - list top 10 [vendors](table) whose [age](column) is [below](operator) [30](value)
+    - show [vendors](table) whose [experience](column) is [greater]{"entity": "operator", "value": ">"} than [18](value) years
+    - give [vendors](table) whose [age](column) is [less]{"entity": "operator", "value": "<"}than [30](value)
+    - list [vendors](table) whose [age](column) is [lesser]{"entity": "operator", "value": "<"} than [20](value) 
+    - show [vendors](table) whose [experience](column) is [less]{"entity": "operator", "value": "<"} than [10](value) years
+    - get me [vendors](table) whose [age](column) is [greater]{"entity": "operator", "value": ">"} than [50](value)
+    - display [vendors](table) with [age](column) [less]{"entity": "operator", "value": "<"} than [30](value)
+    - show me the [vendors](table) where [age](column) is [less]{"entity": "operator", "value": "<"} than [30](value)
+    - list [vendors](table) whose [age](column) is [below]{"entity": "operator", "value": "<"} [30](value)
+    - list [vendors](table) whose [age](column) is [above]{"entity": "operator", "value": ">"} [30](value)
+    - list [vendors](table) whose [age](column) is [more than]{"entity": "operator", "value": ">"} [30](value)
+    - list [vendors](table) whose [age](column) is [more]{"entity": "operator", "value": ">"} [30](value)
+    - list [vendors](table) whose [age](column) is [less than]{"entity": "operator", "value": ">"} [30](value)
+    - list [vendors](table) whose [age](column) is [lesser than]{"entity": "operator", "value": ">"} [30](value)
+   
+- intent: provide_table_name
+  examples: |
+    - list [vendors](table) whose [name](column) [contains]{"entity": "operator", "value": "like"} [abcd](namee)
+    - list [vendors](table) whose [name](column) [has]{"entity": "operator", "value": "like"} [A](namee)
+    - list [vendors](table) whose [name](column) is [equals]{"entity": "operator", "value": "="} [Sakshi](namee)
+    - list [vendors](table) whose [name](column) is [equal to]{"entity": "operator", "value": "="} [Priya](namee)
+    - show me the [vendors](table) whose [name](column) is [equal to]{"entity": "operator", "value": "="} [Abhay](namee)
+    - get me [vendors](table) whose [name](column) [contains]{"entity": "operator", "value": "like"} [Priya](namee)
+    - display [vendors](table) whose [name](column) [has]{"entity": "operator", "value": "like"} [Sharma](namee)
+    - display [vendors](table) whose [name](column) [has]{"entity": "operator", "value": "like"} [Cements](namee)
+
 
